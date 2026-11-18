@@ -2,6 +2,7 @@ package com.projeto.emprestimos.service;
 
 import com.projeto.emprestimos.model.Equipamento;
 import com.projeto.emprestimos.model.TipoEquipamento;
+import com.projeto.emprestimos.repository.EmprestimoRepository;
 import com.projeto.emprestimos.repository.EquipamentoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,11 @@ import java.util.List;
 public class EquipamentoService {
 
     private final EquipamentoRepository repository;     //Declara dependência
+    private final EmprestimoRepository emprestimoRepository;
 
-    public EquipamentoService(EquipamentoRepository repository) {
+    public EquipamentoService(EquipamentoRepository repository, EmprestimoRepository emprestimoRepository) {
         this.repository = repository;
+        this.emprestimoRepository = emprestimoRepository;
     }
 
     public Equipamento cadastrar(Equipamento equipamento) {
@@ -29,7 +32,6 @@ public class EquipamentoService {
 
         // R2 - Todo equipamento novo nasce disponível
         equipamento.setDisponivel(true);
-
         return repository.save(equipamento);
     }
     public List<Equipamento> listar(TipoEquipamento tipo, Boolean disponivel) {
@@ -65,5 +67,22 @@ public class EquipamentoService {
 
         // Salva as alterações no banco
         return repository.save(equipamento);
+    }
+
+    public void remover(Long id) {
+
+        // Verificar se o equipamento existe
+        buscar(id);
+
+        // Verificar se possui histórico de empréstimos
+        if (emprestimoRepository.existsByEquipamentoId(id)) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Equipamento possui histórico de empréstimos"
+            );
+        }
+
+        // Excluir equipamento
+        repository.deleteById(id);
     }
 }

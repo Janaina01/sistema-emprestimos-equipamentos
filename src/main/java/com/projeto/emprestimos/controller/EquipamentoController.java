@@ -44,4 +44,11 @@ public class EquipamentoController {
 
         return service.atualizar(id, dados);
     }
+
+    // DELETE - Remover equipamento por ID
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void remover(@PathVariable Long id) {
+        service.remover(id);
+    }
 }

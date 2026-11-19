@@ -1,6 +1,8 @@
 package com.projeto.emprestimos.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
 
 @Entity
 public class Colaborador {
@@ -10,9 +12,12 @@ public class Colaborador {
     private Long id;
 
     @Column(nullable = false)   //Impede que armazene null
+    @NotBlank(message = "O nome é obrigatório")
     private String nome;
 
     @Column(nullable = false,  unique = true)   //Ajuda a impedir e-mails duplicados
+    @NotBlank(message = "O e-mail é obrigatório")
+    @Email(message = "Informe um e-mail válido")
     private String email;
 
     private String cargo;
@@ -51,4 +56,6 @@ public class Colaborador {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+
+
 }

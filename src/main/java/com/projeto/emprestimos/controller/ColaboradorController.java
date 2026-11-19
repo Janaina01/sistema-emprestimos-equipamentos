@@ -6,8 +6,13 @@ import com.projeto.emprestimos.service.ColaboradorService;
 import com.projeto.emprestimos.service.EmprestimoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 
 import java.util.List;
+
+@Tag(name = "Colaboradores", description = "Cadastro e consulta de colaboradores, com controle de e-mails únicos e " +
+        "histórico de empréstimos.")
 
 @RestController
 @RequestMapping("/colaboradores")
@@ -36,9 +41,12 @@ public class ColaboradorController {
     // POST - Cadastrar colaborador
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Colaborador cadastrar(@RequestBody Colaborador colaborador){
+    public Colaborador cadastrar(
+            @Valid @RequestBody Colaborador colaborador) {
+
         return service.cadastrar(colaborador);
     }
+
 
     // GET - Histórico de empréstimos do colaborador
     @GetMapping("/{id}/emprestimos")

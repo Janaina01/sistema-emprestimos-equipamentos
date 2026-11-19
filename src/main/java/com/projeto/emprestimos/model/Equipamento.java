@@ -1,6 +1,8 @@
 package com.projeto.emprestimos.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity //Representa uma entidade persistida no banco
 public class Equipamento {
@@ -8,11 +10,15 @@ public class Equipamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Gera automaticamente o ID
     private Long id; //Chave primária
 
+    @NotBlank(message = "O patrimônio é obrigatório")
     private String patrimonio;
 
+    @NotBlank(message = "O nome do equipamento é obrigatório")
     private String nome;
 
-    @Enumerated(EnumType.STRING)    //Armazena o tipo como texto
+    //Armazena o tipo como texto
+    @NotNull(message = "O tipo do equipamento é obrigatório")
+    @Enumerated(EnumType.STRING)
     private TipoEquipamento tipo;
 
     private boolean disponivel;

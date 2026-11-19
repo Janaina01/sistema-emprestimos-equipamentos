@@ -4,8 +4,12 @@ import com.projeto.emprestimos.model.Emprestimo;
 import com.projeto.emprestimos.service.EmprestimoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
+
+@Tag(name = "Empréstimos", description = "Gerenciamento de empréstimos e devoluções de equipamentos, " +
+        "com controle de disponibilidade, prazos e atrasos.")
 
 @RestController
 @RequestMapping("/emprestimos")

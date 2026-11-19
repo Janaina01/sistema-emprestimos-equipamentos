@@ -5,8 +5,12 @@ import com.projeto.emprestimos.model.TipoEquipamento;
 import com.projeto.emprestimos.service.EquipamentoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 
 import java.util.List;
+
+@Tag(name = "Equipamentos", description = "Cadastro, consulta, atualização e exclusão de equipamentos")
 
 @RestController
 @RequestMapping("/equipamentos")    //Rota base /equipamentos
@@ -33,16 +37,16 @@ public class EquipamentoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Equipamento cadastrar(@RequestBody Equipamento equipamento) {
+    public Equipamento cadastrar(@Valid @RequestBody Equipamento equipamento) {
         return service.cadastrar(equipamento);
     }
 
     @PutMapping("/{id}")
     public Equipamento atualizar(
             @PathVariable Long id,
-            @RequestBody Equipamento dados) {
+            @Valid @RequestBody Equipamento equipamento) {
 
-        return service.atualizar(id, dados);
+        return service.atualizar(id, equipamento);
     }
 
     // DELETE - Remover equipamento por ID

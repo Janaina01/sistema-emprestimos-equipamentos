@@ -171,11 +171,11 @@ A especificação OpenAPI também fica disponível em `/v3/api-docs`.
 
 ## Deploy e demonstração
 
-- **API publicada:** adicionar URL após o deploy no Render.
-- **Interface de demonstração:** adicionar URL quando o frontend estiver pronto.
-- **Repositório GitHub:** adicionar URL do repositório.
+- **API:** <https://sistema-emprestimos-equipamentos.onrender.com>
+- **Listagem de equipamentos:** <https://sistema-emprestimos-equipamentos.onrender.com/equipamentos>
+- **Documentação Swagger:** <https://sistema-emprestimos-equipamentos.onrender.com/swagger-ui/index.html>
 
-> Nota: a configuração atual utiliza H2 em arquivo local. Em hospedagens com sistema de arquivos efêmero, os dados podem ser perdidos após reinicialização ou nova implantação. O ambiente de produção deve ter a persistência configurada adequadamente.
+>Observação: a aplicação utiliza o plano gratuito do Render, podendo levar alguns segundos para responder após períodos de inatividade. O banco H2 é utilizado para fins acadêmicos e não possui persistência garantida após reinicializações do serviço.
 
 ## Próximas melhorias possíveis
 

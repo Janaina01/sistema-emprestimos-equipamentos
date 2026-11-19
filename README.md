@@ -14,6 +14,8 @@ Esse é um projeto desenvolvido no programa Java + IA
 - Bean Validation (`jakarta.validation`)
 - Swagger / OpenAPI (`springdoc-openapi`)
 - Maven e JUnit 5
+- Swagger/OpenAPI
+- Base44 (frontend gerado com auxílio de IA).
 
 ## Funcionalidades e regras de negócio
 
@@ -176,6 +178,20 @@ A especificação OpenAPI também fica disponível em `/v3/api-docs`.
 - **Documentação Swagger:** <https://sistema-emprestimos-equipamentos.onrender.com/swagger-ui/index.html>
 
 >Observação: a aplicação utiliza o plano gratuito do Render, podendo levar alguns segundos para responder após períodos de inatividade. O banco H2 é utilizado para fins acadêmicos e não possui persistência garantida após reinicializações do serviço.
+
+## Interface web — Empresta
+
+O projeto conta com uma interface web responsiva, desenvolvida com auxílio de inteligência artificial por meio do Base44, para facilitar a utilização e a demonstração da API REST.
+
+**Acesse a aplicação:** https://empresta-elastech.base44.app
+
+A interface permite:
+- Visualizar indicadores de equipamentos disponíveis, indisponíveis e empréstimos atrasados.
+- Cadastrar e consultar equipamentos e colaboradores.
+- Registrar empréstimos e devoluções.
+- Consultar o histórico de empréstimos.
+
+O frontend consome a API REST desenvolvida em Java com Spring Boot e publicada no Render. As regras de negócio e a persistência dos dados permanecem sob responsabilidade do backend.
 
 ## Próximas melhorias possíveis
 

@@ -42,7 +42,7 @@ public class EmprestimoController {
     }
 
     // PUT - Registrar devolução
-    @PutMapping("/{id}/devolver")
+    @PutMapping("/{id}/devolucao")
     public  Emprestimo devolver(@PathVariable Long id){
         return service.devolver(id);
     }

@@ -1,8 +1,8 @@
 # Sistema de Empréstimos de Equipamentos 💻
 
-API REST desenvolvida em **Java e Spring Boot** para gerenciar equipamentos corporativos, colaboradores e empréstimos, com controle de disponibilidade, devoluções e atrasos.
+API RESgerenciar equipamentos corporativos, colaboradores e empréstimos, com controle de disponibilidade, devoluções e atrasos.
 
-Esse é um projeto desenvolvido no programa Java + IA 
+Esse é um projeto desenvolvido no programa Java + IA
 #ElasTech da SoulCode em parceria com a PagBank.
 
 ## Tecnologias utilizadas
@@ -11,10 +11,9 @@ Esse é um projeto desenvolvido no programa Java + IA
 - Spring Boot 4.1.2
 - Spring Web MVC, Spring Data JPA e Hibernate
 - H2 Database (persistência local em arquivo)
-- Bean Validation (`jakarta.validation`)
-- Swagger / OpenAPI (`springdoc-openapi`)
+- Bean Validation (`jakarta.validation`) - bônus
+- Swagger / OpenAPI (`springdoc-openapi`) - bônus
 - Maven e JUnit 5
-- Swagger/OpenAPI
 - Base44 (frontend gerado com auxílio de IA).
 
 ## Funcionalidades e regras de negócio
@@ -176,6 +175,7 @@ A especificação OpenAPI também fica disponível em `/v3/api-docs`.
 - **API:** <https://sistema-emprestimos-equipamentos.onrender.com>
 - **Listagem de equipamentos:** <https://sistema-emprestimos-equipamentos.onrender.com/equipamentos>
 - **Documentação Swagger:** <https://sistema-emprestimos-equipamentos.onrender.com/swagger-ui/index.html>
+- **Demonstração:** <https://www.youtube.com/watch?v=2Qgn3105vjU>
 
 >Observação: a aplicação utiliza o plano gratuito do Render, podendo levar alguns segundos para responder após períodos de inatividade. O banco H2 é utilizado para fins acadêmicos e não possui persistência garantida após reinicializações do serviço.
 
@@ -191,7 +191,7 @@ A interface permite:
 - Registrar empréstimos e devoluções.
 - Consultar o histórico de empréstimos.
 
-O frontend consome a API REST desenvolvida em Java com Spring Boot e publicada no Render. As regras de negócio e a persistência dos dados permanecem sob responsabilidade do backend.
+O frontend consome a API REST desenvolvida em Java com Spring Boot e publicada no Render. As regras de negócio e a persistência dos dados permanecem sob responsabilidade do backend.T desenvolvida em **Java e Spring Boot** para 
 
 ## Próximas melhorias possíveis
 
